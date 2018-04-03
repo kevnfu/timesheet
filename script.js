@@ -28,13 +28,16 @@ $(document).ready(function() {
 
 
 ref.on("child_added", function(snapshot, prevChildKey) {
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
+    let startdate = moment(snapshot.val().date);
+    let monthsWorked = moment().diff(startdate, "months")
+
     $("#table-body").append($("<tr>")
         .append($("<td>").html(snapshot.val().name))
         .append($("<td>").html(snapshot.val().role))
         .append($("<td>").html(snapshot.val().date))
-        .append($("<td>").html("coming soon"))
+        .append($("<td>").html(monthsWorked))
         .append($("<td>").html(snapshot.val().rate))
-        .append($("<td>").html("coming soon"))
+        .append($("<td>").html(monthsWorked * snapshot.val().rate))
     );
 });
