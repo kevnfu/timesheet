@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time Sheet</title>
+
+        <!-- Links go here -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Our style -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Employee Data Management</h1>
+                <p>A Comprehensive Directory of Employee Billable Hours</p>
+            </div>
+            
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Current Employees</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Employee Name</th>
+                                    <th>Role</th>
+                                    <th>Start Date</th>
+                                    <th>Months Worked</th>
+                                    <th>Monthly Rate ($)</th>
+                                    <th>Total Billed ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+
+                            </tbody>
+
+                        </table>
+
+                    </div> 
+
+                </div> <!-- End of the Panel Div for the Data Table -->
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Employee</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name-input">Employee Name</label>
+                                <input type="text" class="form-control" id="name-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="role-input">Role</label>
+                                <input type="text" class="form-control" id="role-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="date-input">Start Date</label>
+                                <input type="date" class="form-control" id="date-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-input">Monthly Rate</label>
+                                <input type="number" class="form-control" id="rate-input">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+
+        </div>
+
+
+        <!-- Links go here -->
+        <!-- jquery JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Our JS -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
