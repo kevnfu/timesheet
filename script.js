@@ -13,7 +13,8 @@ firebase.initializeApp(config);
 let db = firebase.database();
 let ref = db.ref("data");
 
-$(document).on("click", "button[type='submit']", function() {
+$(document).on("click", "button[type='submit']", function(e) {
+    e.preventDefault();
     ref.push({
         name: $("#name-input").val(), 
         role: $("#role-input").val(), 
@@ -30,7 +31,7 @@ $(document).ready(function() {
 ref.on("child_added", function(snapshot, prevChildKey) {
     // console.log(snapshot.val());
     let startdate = moment(snapshot.val().date);
-    let monthsWorked = moment().diff(startdate, "months")
+    let monthsWorked = moment().diff(startdate, "months");
 
     $("#table-body").append($("<tr>")
         .append($("<td>").html(snapshot.val().name))
